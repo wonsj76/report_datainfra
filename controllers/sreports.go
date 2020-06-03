@@ -25,6 +25,7 @@ func (k *SReportsController) GetServer() {
 	//test
 	var inserverdata InServerData
 
+	logs.NewLogger(3000)
 	logs.SetLogger(logs.AdapterFile, `{"filename":"./logs/server_project.log","level":7,"maxlines":0,"maxsize":0,"daily":true,"maxdays":365,"color":true}`)
 
 	body, _ := ioutil.ReadAll(k.Ctx.Request.Body)
